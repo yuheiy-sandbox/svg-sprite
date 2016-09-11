@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .bg {
+        height: 20vh;
+        padding-top: 20vh;
+        background-color: #fff;
+        background-image: url("wave.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 6000%;
+        background-position: center 0%;
+        animation: up 10s steps(60) infinite, move 10s infinite linear;
+      }
+
+      .bg::after {
+        content: "";
+        display: block;
+        height: 100vh;
+        background-color: #c3c31b;
+      }
+
+      @keyframes up {
+        from {
+          background-position: center 0%;
+        }
+        to {
+          background-position: center calc(60 / (60 - 1) * 100%);
+        }
+      }
+
+      @keyframes move {
+        from {
+          transform: translateY(100vh);
+        }
+        to {
+          transform: translateY(-20vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+  </body>
+</html>
